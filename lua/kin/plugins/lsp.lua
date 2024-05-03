@@ -187,6 +187,9 @@ return { -- LSP Configuration & Plugins
 			tsserver = {
 				settings = {},
 			},
+			prettierd = {
+				settings = {},
+			},
 		}
 		-- Ensure the servers and tools above are installed
 		--  To check the current status of installed tools and/or manually install

@@ -17,6 +17,12 @@ keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save fi
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
+-- Move to window using the <ctrl> hjkl keys
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),

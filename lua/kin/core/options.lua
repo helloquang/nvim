@@ -1,6 +1,9 @@
 -- vim.cmd("let g:netrw_liststyle = 3")
-vim.cmd("let g:netrw_banner = 0")
-vim.cmd("let g:netrw_keepdir = 0")
+-- vim.cmd("let g:netrw_banner = 0")
+-- vim.cmd("let g:netrw_keepdir = 0")
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local opt = vim.opt -- for conciseness
 
 -- line numbers
