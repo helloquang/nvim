@@ -1,0 +1,19 @@
+{
+    "typescriptReactArrowForwardRefComponentExport": {
+        "prefix": "tsrafrce",
+        "body": [
+            "import React, { forwardRef } from 'react'",
+            "",
+            "type Props = React.ComponentProps<'${3:div}'> & {}",
+            "",
+            "const ${1:${TM_FILENAME_BASE}} = forwardRef<${2:HTMLDivElement}, Props>((props, ref) => {",
+            "  return (",
+            "    <$3 ref={ref}>$0</$3>",
+            "  )",
+            "});",
+            "",
+            "export default $1;"
+        ],
+        "description": "Creates a React Arrow Forward Ref Component with ES7 module system and TypeScript interface"
+    }
+}

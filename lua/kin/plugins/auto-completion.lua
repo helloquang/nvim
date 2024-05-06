@@ -8,13 +8,11 @@ return { -- Autocompletion
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 		},
-		config = function()
-			-- See `:help cmp`
+		opts = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
-			luasnip.config.setup({})
 
-			cmp.setup({
+			return {
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -22,10 +20,7 @@ return { -- Autocompletion
 				},
 				completion = { completeopt = "menu,menuone,noinsert" },
 
-				-- For an understanding of why these mappings were
-				-- chosen, you will need to read `:help ins-completion`
-				--
-				-- No, but seriously. Please read `:help ins-completion`, it is really good!
+				-- :help ins-completion
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
 					["<C-n>"] = cmp.mapping.select_next_item(),
@@ -40,7 +35,7 @@ return { -- Autocompletion
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
 					-- Manually trigger a completion from nvim-cmp.
-					["<C-Space>"] = cmp.mapping.complete({}),
+					["<C-c>"] = cmp.mapping.complete(),
 
 					["<C-l>"] = cmp.mapping(function()
 						if luasnip.expand_or_locally_jumpable() then
@@ -58,28 +53,13 @@ return { -- Autocompletion
 					{ name = "luasnip" },
 					{ name = "path" },
 				},
-			})
+			}
+		end,
+		config = function(_, opts)
+			-- See `:help cmp`
+			local cmp = require("cmp")
+			cmp.setup(opts)
 		end,
 	},
-	{
-		"L3MON4D3/LuaSnip",
-		build = (function()
-			-- Build Step is needed for regex support in snippets.
-			-- This step is not supported in many windows environments.
-			-- Remove the below condition to re-enable on windows.
-			if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-				return
-			end
-			return "make install_jsregexp"
-		end)(),
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
-	},
-	{
-		"rafamadriz/friendly-snippets",
-		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-		end,
-	},
+	
 }

@@ -9,13 +9,9 @@ return { -- Highlight, edit, and navigate code
 			"bash",
 			"c",
 			"html",
-			"lua",
-			"luadoc",
 			"markdown",
 			"vim",
 			"vimdoc",
-			"javascript",
-			"typescript",
 		},
 		-- Autoinstall languages that are not installed
 		auto_install = true,

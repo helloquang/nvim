@@ -10,8 +10,17 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("kin.plugins", {
+
+require("lazy").setup({
 	change_detection = {
 		notify = false,
+	},
+	spec = {
+		{ import = "kin.plugins" },
+		{ import = "kin.plugins.extras.lang.lua" },
+		{ import = "kin.plugins.extras.lang.typescript" },
+		{ import = "kin.plugins.extras.formatting.stylua" },
+		{ import = "kin.plugins.extras.formatting.prettierd" },
+		{ import = "kin.plugins.extras.ai.codeium" },
 	},
 })
