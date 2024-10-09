@@ -21,6 +21,7 @@ require("lazy").setup({
 		{ import = "kin.plugins.extras.lang.css" },
 		{ import = "kin.plugins.extras.lang.tailwindcss" },
 		{ import = "kin.plugins.extras.lang.typescript" },
+		{ import = "kin.plugins.extras.lang.php" },
 		{ import = "kin.plugins.extras.formatting.stylua" },
 		{ import = "kin.plugins.extras.formatting.prettierd" },
 	},
