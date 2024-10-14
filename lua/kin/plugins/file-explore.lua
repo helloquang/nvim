@@ -21,6 +21,11 @@ return {
 					end,
 				},
 			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+				},
+			},
 		},
 		keys = {
 			{
@@ -31,13 +36,5 @@ return {
 				desc = "Explorer NeoTree (cwd)",
 			},
 		},
-		config = function(_, opts)
-			if vim.fn.argc(-1) == 1 then
-				local stat = vim.uv.fs_stat(vim.fn.argv(0))
-				if stat and stat.type == "directory" then
-					require("neo-tree").setup(opts)
-				end
-			end
-		end,
 	},
 }
