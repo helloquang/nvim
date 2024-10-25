@@ -5,17 +5,16 @@ local keymap = vim.keymap -- for conciseness
 ---------------------
 -- General Keymaps -------------------
 
+-- exit insert mode
+
+keymap.set("i", "jk", "<esc>")
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
-keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-
--- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+keymap.set({ "i", "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Move to window using the <ctrl> hjkl keys
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
@@ -27,8 +26,7 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev Diagnostic" })
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
