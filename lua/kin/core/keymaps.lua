@@ -27,11 +27,3 @@ keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnost
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev Diagnostic" })
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})

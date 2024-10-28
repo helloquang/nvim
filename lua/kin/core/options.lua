@@ -56,3 +56,34 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.expandtab = false
 	end,
 })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufLeave", {
+	desc = "Autosave when switching buffer",
+	pattern = "*",
+	command = "silent! :w",
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	desc = "Autosave when leaving",
+	pattern = "*",
+	command = "silent! wa",
+})
+
+vim.api.nvim_create_autocmd("FocusLost", {
+	desc = "Autosave when tab to window",
+	pattern = "*",
+	command = "silent! wa",
+})
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+	pattern = "*",
+	command = "checktime",
+})
