@@ -1,9 +1,11 @@
 return {
-	"neovim/nvim-lspconfig",
-	opts = {
-		servers = {
-			prettierd = {
-				settings = {},
+	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				prettierd = {
+					settings = {},
+				},
 			},
 		},
 	},
