@@ -11,9 +11,10 @@ return {
 	--     vim.cmd.hi 'Comment gui=none'
 	--   end
 	--
-	"loctvl842/monokai-pro.nvim",
+	"sainnhe/sonokai",
 	init = function()
-		vim.cmd.colorscheme("monokai-pro")
+		vim.cmd.colorscheme("sonokai")
+
 		vim.cmd.hi("Comment gui=none")
 	end,
 }
