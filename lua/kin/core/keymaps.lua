@@ -24,6 +24,3 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 
 -- diagnostic
 keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev Diagnostic" })
-keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })

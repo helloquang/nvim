@@ -6,6 +6,9 @@ vim.g.loaded_netrwPlugin = 1
 
 local opt = vim.opt -- for conciseness
 
+opt.undofile = true
+opt.undodir = vim.env.HOME .. "/.vim/.undo/"
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -46,7 +49,6 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- turn off swapfile
 opt.swapfile = false
-
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "php", "phtml" },
 	callback = function()
