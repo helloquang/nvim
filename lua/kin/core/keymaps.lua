@@ -13,6 +13,9 @@ keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
+keymap.set("n", "dd", '"_dd')
+keymap.set("n", "ciw", '"_ciw')
+keymap.set("x", "d", '"_d')
 
 keymap.set({ "i", "x", "n", "s" }, "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
 

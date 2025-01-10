@@ -13,22 +13,20 @@ return {
 		end
 	end,
 	opts = function()
-		local lualine_require = require("lualine_require")
-		lualine_require.require = require
-
 		vim.o.laststatus = vim.g.lualine_laststatus
+		local theme = require("lualine.themes.sonokai")
 		local opts = {
 			options = {
-				theme = "auto",
 				globalstatus = vim.o.laststatus == 3,
-				disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
+				theme = theme,
+				disabled_filetypes = { statusline = { "dashboard", "alpha" } },
 			},
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff" },
 				lualine_c = { { "filename", path = 1 } },
 				lualine_x = { "diagnostics" },
-				lualine_y = { "encoding", "filetype" },
+				lualine_y = { "filetype", "encoding" },
 				lualine_z = { "location" },
 			},
 		}

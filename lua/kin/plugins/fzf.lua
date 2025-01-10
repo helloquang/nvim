@@ -11,29 +11,31 @@ return {
 		config = function(_, opts)
 			-- Quickfix
 
-			vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "[S]earch [F]iles" })
-			vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<cr>", { desc = "[S]earch [G]rep" })
-			vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua resume<cr>", { desc = "[S]earch [R]esume" })
+			vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "[F]iles" })
+			vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<cr>", { desc = "[G]rep" })
+			vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua resume<cr>", { desc = "[R]esume" })
+			vim.keymap.set("n", "<leader>r", "<cmd>FzfLua oldfiles cwd_only=true<cr>", { desc = "[R]ecent files" })
 
+			vim.keymap.set("n", "<leader>s", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "[S]ymbols" })
 			vim.keymap.set(
 				"n",
-				"<leader>sS",
+				"<leader>S",
 				"<cmd>FzfLua lsp_live_workspace_symbols<cr>",
-				{ desc = "[S]earch [S]ymbols" }
+				{ desc = "[W]orkspace [S]ymbols" }
 			)
 
-			vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<cr>", { desc = "[S]earch [Q]ickfix list" })
-			vim.keymap.set("n", "<leader>l", "<cmd>FzfLua loclist<cr>", { desc = "[S]earch [L]ocation list" })
+			vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<cr>", { desc = "[Q]ickfix list" })
+			vim.keymap.set("n", "<leader>l", "<cmd>FzfLua loclist<cr>", { desc = "[L]ocation list" })
 
 			vim.keymap.set(
 				"n",
-				"<leader>sd",
+				"<leader>d",
 				"<cmd>FzfLua lsp_document_diagnostics<cr>",
 				{ desc = "[D]ocument [D]iagnostics" }
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>sD",
+				"<leader>D",
 				"<cmd>FzfLua lsp_workspace_diagnostics<cr>",
 				{ desc = "[W]orkspace [D]iagnostics" }
 			)

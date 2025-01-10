@@ -1,14 +1,12 @@
--- vim.cmd("let g:netrw_liststyle = 3")
--- vim.cmd("let g:netrw_banner = 0")
--- vim.cmd("let g:netrw_keepdir = 0")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.o.laststatus = 3
 local opt = vim.opt -- for conciseness
-
+opt.cmdheight = 0
+opt.showmode = false
 opt.undofile = true
 opt.undodir = vim.env.HOME .. "/.vim/.undo/"
-
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
