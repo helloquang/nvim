@@ -11,7 +11,8 @@ return {
 		dashboard.section.header.val = vim.split(logo, "\n")
   -- stylua: ignore
   dashboard.section.buttons.val = {
-     dashboard.button("r", " " .. " Recent files",    [[<cmd> lua require("fzf-lua").oldfiles({cwd_only = true}) <cr>]]),
+    dashboard.button("e", " " .. " Explore",   [[<cmd> Yazi cwd <cr>]]),
+    dashboard.button("r", " " .. " Recent files",    [[<cmd> lua require("fzf-lua").oldfiles({cwd_only = true}) <cr>]]),
     dashboard.button("c", " " .. " Config",          [[<cmd>lua vim.cmd("cd " .. vim.fn.stdpath("config"))<cr> <cmd>Yazi<cr>]]),
     dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
   }
