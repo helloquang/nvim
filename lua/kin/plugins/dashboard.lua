@@ -11,9 +11,9 @@ return {
 		dashboard.section.header.val = vim.split(logo, "\n")
   -- stylua: ignore
   dashboard.section.buttons.val = {
-    dashboard.button("e", " " .. " Explore",   [[<cmd> Yazi cwd <cr>]]),
+    dashboard.button("e", " " .. " Explore",   [[<cmd> lua require("neo-tree.command").execute({ dir = vim.uv.cwd() }) <cr>]]),
     dashboard.button("r", " " .. " Recent files",    [[<cmd> lua require("fzf-lua").oldfiles({cwd_only = true}) <cr>]]),
-    dashboard.button("c", " " .. " Config",          [[<cmd>lua vim.cmd("cd " .. vim.fn.stdpath("config"))<cr> <cmd>Yazi<cr>]]),
+    dashboard.button("c", " " .. " Config",          [[<cmd> lua require("neo-tree.command").execute({ dir = vim.fn.stdpath("config") }) <cr> ]]),
     dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
   }
 		for _, button in ipairs(dashboard.section.buttons.val) do

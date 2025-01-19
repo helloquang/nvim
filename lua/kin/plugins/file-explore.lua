@@ -1,25 +1,36 @@
 return {
 	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		keys = {
-			{
-				"<leader>E",
-				"<cmd>Yazi<cr>",
-				desc = "Explore current file",
-			},
-			{
-				"<leader>e",
-				"<cmd>Yazi cwd<cr>",
-				desc = "Explore working directory",
-			},
+		"nvim-neo-tree/neo-tree.nvim",
+		event = "VimEnter",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
 		},
 		opts = {
-			-- if you want to open yazi instead of netrw, see below for more info
-			open_for_directories = false,
-			floating_window_scaling_factor = 1,
-			keymaps = {
-				show_help = "<f1>",
+			event_handlers = {
+				{
+					event = "file_opened",
+					handler = function(file_path)
+						--auto close
+						require("neo-tree").close_all()
+					end,
+				},
+			},
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+				},
+			},
+		},
+		keys = {
+			{
+				"<leader>e",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+				end,
+				desc = "Explorer NeoTree (cwd)",
 			},
 		},
 	},
