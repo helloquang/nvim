@@ -8,6 +8,10 @@
             {
                 "language": "typescriptreact",
                 "path": "./javascript/react-ts.json"
+            },
+            {
+                "language": "php",
+                "path": "./php/laminas.json"
             }
         ]
     }
