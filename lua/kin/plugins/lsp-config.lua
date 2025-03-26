@@ -23,5 +23,7 @@ return {
 				end,
 			},
 		})
+
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
 	end,
 }

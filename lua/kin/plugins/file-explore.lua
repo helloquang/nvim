@@ -1,36 +1,16 @@
 return {
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		event = "VimEnter",
-		branch = "v3.x",
+		"stevearc/oil.nvim",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {
-			event_handlers = {
-				{
-					event = "file_opened",
-					handler = function(file_path)
-						--auto close
-						require("neo-tree").close_all()
-					end,
-				},
-			},
-			filesystem = {
-				follow_current_file = {
-					enabled = true,
-				},
-			},
-		},
+		event = "VimEnter",
+		opts = {},
 		keys = {
 			{
 				"<leader>e",
-				function()
-					require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
-				end,
-				desc = "Explorer NeoTree (cwd)",
+				"<CMD>Oil<CR>",
+				desc = "Fili explore",
 			},
 		},
 	},

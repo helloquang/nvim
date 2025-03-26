@@ -40,7 +40,7 @@ return {
 				{ desc = "[W]orkspace [D]iagnostics" }
 			)
       -- stylua: ignore
-			vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions jump_to_single_result=true<cr>", { desc = "[G]oto [D]efinition" })
+			vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions jump1=true<cr>", { desc = "[G]oto [D]efinition" })
 			vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_declarations<cr>", { desc = "[G]oto [D]eclaration" })
 
       -- stylua: ignore
