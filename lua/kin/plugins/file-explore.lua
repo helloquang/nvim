@@ -10,7 +10,7 @@ return {
 			{
 				"<leader>e",
 				"<CMD>Oil<CR>",
-				desc = "Fili explore",
+				desc = "File explore",
 			},
 		},
 	},

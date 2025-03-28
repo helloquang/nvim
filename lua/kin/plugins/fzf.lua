@@ -8,46 +8,75 @@ return {
 			config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
 			config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
 		end,
+		keys = {
+			{
+				"<leader>ff",
+				function()
+					require("fzf-lua").files()
+				end,
+				mode = { "n" },
+				desc = "Files",
+			},
+			{
+				"<leader>fb",
+				function()
+					require("fzf-lua").buffers()
+				end,
+				mode = { "n" },
+				desc = "Buffers",
+			},
+			{
+				"<leader>f<leader>",
+				function()
+					require("fzf-lua").resume()
+				end,
+				mode = { "n" },
+				desc = "Resume",
+			},
+			{
+				"<leader>f/",
+				function()
+					require("fzf-lua").live_grep()
+				end,
+				mode = { "n" },
+				desc = "Live grep",
+			},
+			{
+				"<leader>fr",
+				function()
+					require("fzf-lua").lsp_references()
+				end,
+				mode = { "n" },
+				desc = "References",
+			},
+			{
+				"gd",
+				function()
+					require("fzf-lua").lsp_definitions()
+				end,
+				mode = { "n" },
+				desc = "Goto definition",
+			},
+
+			{
+				"gD",
+				function()
+					require("fzf-lua").lsp_declarations()
+				end,
+				mode = { "n" },
+				desc = "Goto declaration",
+			},
+		},
 		config = function(_, opts)
 			-- Quickfix
 
-			vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "[F]iles" })
-			vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<cr>", { desc = "[G]rep" })
-			vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua resume<cr>", { desc = "[R]esume" })
-			vim.keymap.set("n", "<leader>r", "<cmd>FzfLua oldfiles cwd_only=true<cr>", { desc = "[R]ecent files" })
-
-			vim.keymap.set("n", "<leader>s", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "[S]ymbols" })
-			vim.keymap.set(
-				"n",
-				"<leader>S",
-				"<cmd>FzfLua lsp_live_workspace_symbols<cr>",
-				{ desc = "[W]orkspace [S]ymbols" }
-			)
-
-			vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<cr>", { desc = "[Q]ickfix list" })
-			vim.keymap.set("n", "<leader>l", "<cmd>FzfLua loclist<cr>", { desc = "[L]ocation list" })
-
-			vim.keymap.set(
-				"n",
-				"<leader>d",
-				"<cmd>FzfLua lsp_document_diagnostics<cr>",
-				{ desc = "[D]ocument [D]iagnostics" }
-			)
-			vim.keymap.set(
-				"n",
-				"<leader>D",
-				"<cmd>FzfLua lsp_workspace_diagnostics<cr>",
-				{ desc = "[W]orkspace [D]iagnostics" }
-			)
-      -- stylua: ignore
-			vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions jump1=true<cr>", { desc = "[G]oto [D]efinition" })
-			vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_declarations<cr>", { desc = "[G]oto [D]eclaration" })
-
-      -- stylua: ignore
-			vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references jump_to_single_result=true<cr>", { desc = "[G]oto [R]eferences" })
-
-      -- stylua: ignore
-			vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations jump_to_single_result=true<cr>", { desc = "[G]oto [I]mplementations" })
+			-- vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "[F]iles" })
+			-- vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<cr>", { desc = "[G]rep" })
+			-- vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua resume<cr>", { desc = "[R]esume" })
+			-- vim.keymap.set("n", "<leader>r", "<cmd>FzfLua oldfiles cwd_only=true<cr>", { desc = "[R]ecent files" })
+			--
+			-- vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<cr>", { desc = "[Q]ickfix list" })
+			-- vim.keymap.set("n", "<leader>l", "<cmd>FzfLua loclist<cr>", { desc = "[L]ocation list" })
 		end,
 	},
 }
