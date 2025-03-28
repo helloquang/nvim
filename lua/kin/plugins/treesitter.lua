@@ -3,7 +3,7 @@ return { -- Highlight, edit, and navigate code
 	dependencies = {
 		{ "windwp/nvim-ts-autotag" },
 	},
-	build = ":TSUpdate",
+	build = ":TSUpdateSync",
 	opts = {
 		ensure_installed = {
 			"bash",
