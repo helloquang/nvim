@@ -7,6 +7,7 @@ opt.cmdheight = 0
 opt.showmode = false
 opt.undofile = true
 opt.undodir = vim.env.HOME .. "/.vim/.undo/"
+opt.undolevels = 10000
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
