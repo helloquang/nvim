@@ -4,7 +4,9 @@ return {
 		opts = {
 			servers = {
 				tailwindcss = {
-					settings = {},
+					settings = {
+						tailwindCSS = {},
+					},
 				},
 			},
 		},

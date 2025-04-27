@@ -6,6 +6,11 @@ return { -- Autocompletion
 		dependencies = {
 			"L3MON4D3/LuaSnip",
 		},
-		opts = function() end,
+		opts = {
+			snippets = { preset = "luasnip" },
+			sources = {
+				default = { "lsp", "buffer", "snippets", "path" },
+			},
+		},
 	},
 }
