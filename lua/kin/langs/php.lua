@@ -4,7 +4,16 @@ return {
 		opts = {
 			servers = {
 				intelephense = {
-					settings = {},
+					settings = {
+						intelephense = {
+							stubs = {
+								"wordpress",
+							},
+							files = {
+								maxSize = 5000000, -- Increase max file size if needed
+							},
+						},
+					},
 				},
 				["php-cs-fixer"] = {
 					settings = {},

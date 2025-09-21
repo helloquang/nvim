@@ -42,6 +42,9 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
+vim.opt.spell = true -- Enable spellchecking
+vim.opt.spelllang = { "en" }
+vim.optspellfile = vim.fs.normalize(vim.fn.stdpath("config") .. "/data/spell")
 -- split windows
 -- opt.splitright = true -- split vertical window to the right
 -- opt.splitbelow = true -- split horizontal window to the bottom

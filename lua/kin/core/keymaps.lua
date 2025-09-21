@@ -30,3 +30,4 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 
 -- diagnostic
 keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { silent = true, desc = "Code action" })

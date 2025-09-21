@@ -22,38 +22,5 @@ return {
 			},
 		})
 
-		-- vim.api.nvim_create_autocmd("LspAttach", {
-		-- 	group = vim.api.nvim_create_augroup("kin-lsp-attach", { clear = true }),
-		-- 	callback = function(event)
-		-- 		-- vim.keymap.set(
-		-- 		-- 	"n",
-		-- 		-- 	"<leader>d",
-		-- 		-- 	"<cmd>FzfLua lsp_document_diagnostics<cr>",
-		-- 		-- 	{ desc = "[D]ocument [D]iagnostics" }
-		-- 		-- )
-		-- 		-- vim.keymap.set(
-		-- 		-- 	"n",
-		-- 		-- 	"<leader>D",
-		-- 		-- 	"<cmd>FzfLua lsp_workspace_diagnostics<cr>",
-		-- 		-- 	{ desc = "[W]orkspace [D]iagnostics" }
-		-- 		-- )
-		-- 		-- vim.keymap.set("n", "<leader>s", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "[S]ymbols" })
-		-- 		-- vim.keymap.set(
-		-- 		-- 	"n",
-		-- 		-- 	"<leader>S",
-		-- 		-- 	"<cmd>FzfLua lsp_live_workspace_symbols<cr>",
-		-- 		-- 	{ desc = "[W]orkspace [S]ymbols" }
-		-- 		-- )
-		-- 		--
-		-- 		-- vim.keymap.set(
-		-- 		-- 	"n",
-		-- 		-- 	"gi",
-		-- 		-- 	"<cmd>FzfLua lsp_implementations jump_to_single_result=true<cr>",
-		-- 		-- 	{ desc = "[G]oto [I]mplementations" }
-		-- 		-- )
-		--
-		-- 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-		-- 	end,
-		-- })
 	end,
 }

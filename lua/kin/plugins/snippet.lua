@@ -10,12 +10,9 @@ return {
 			end
 			return "make install_jsregexp"
 		end)(),
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-		},
+		dependencies = {},
 		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./data/snippets" } })
 		end,
 	},
 }
