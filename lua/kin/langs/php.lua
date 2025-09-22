@@ -18,6 +18,10 @@ return {
 				["php-cs-fixer"] = {
 					settings = {},
 				},
+
+				["twiggy-language-server"] = {
+					settings = {},
+				},
 			},
 		},
 	},
