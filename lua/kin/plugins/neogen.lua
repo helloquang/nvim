@@ -1,6 +1,6 @@
 return {
 	"danymat/neogen",
-	event = "VeryLazy",
+	event = { "BufReadPost" },
 	config = true,
 	keys = {
 		{

@@ -5,7 +5,7 @@ return {
 		linters_by_ft = {},
 		linters = {},
 	},
-	event = "VeryLazy",
+	event = { "BufReadPost" },
 	config = function(_, opts)
 		local lint = require("lint")
 		lint.linters_by_ft = opts.linters_by_ft
