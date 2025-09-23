@@ -1,10 +1,11 @@
 return {
 	"mfussenegger/nvim-lint",
 	opts = {
-		events = { "BufEnter", "BufWritePost", "InsertLeave" },
+		events = { "BufEnter" },
 		linters_by_ft = {},
 		linters = {},
 	},
+	event = "VeryLazy",
 	config = function(_, opts)
 		local lint = require("lint")
 		lint.linters_by_ft = opts.linters_by_ft
