@@ -1,5 +1,4 @@
 return {
-	"numToStr/Comment.nvim",
+	"windwp/nvim-ts-autotag",
 	event = { "BufReadPost", "BufNewFile" },
-	opts = {},
 }

@@ -5,6 +5,6 @@ return {
 		-- See `:help ibl`
     event = { "BufReadPost", "BufNewFile" },
 		main = "ibl",
-		opts = {},
+		config = true,
 	},
 }

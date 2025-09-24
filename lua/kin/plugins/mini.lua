@@ -5,6 +5,8 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("mini.icons").setup()
+			require("mini.pairs").setup()
+			require("mini.comment").setup()
 			-- Better Around/Inside textobjects
 			--
 			-- Examples:

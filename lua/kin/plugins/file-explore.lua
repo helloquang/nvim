@@ -2,7 +2,7 @@ return {
 	{
 		"stevearc/oil.nvim",
 		event = "VeryLazy",
-		opts = {},
+		config = true,
 		keys = {
 			{
 				"<leader>e",

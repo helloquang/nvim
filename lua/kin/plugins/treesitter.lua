@@ -1,9 +1,7 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
 	event = "VeryLazy",
-	dependencies = {
-		{ "windwp/nvim-ts-autotag" },
-	},
+	dependencies = {},
 	build = ":TSUpdateSync",
 	opts = {
 		ensure_installed = {
