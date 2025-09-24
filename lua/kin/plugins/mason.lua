@@ -1,7 +1,8 @@
 return {
 	"williamboman/mason.nvim",
 	dependencies = {},
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile" },
+	-- event = "VeryLazy",
 	config = function(_, opts)
 		local servers = opts.servers or {}
 

@@ -1,6 +1,6 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {},
 	build = ":TSUpdateSync",
 	opts = {
@@ -12,18 +12,14 @@ return { -- Highlight, edit, and navigate code
 			"vim",
 			"vimdoc",
 		},
+		sync_install = true,
 		auto_install = false,
 		highlight = {
 			enable = true,
-			additional_vim_regex_highlighting = { "ruby" },
 		},
-		indent = { enable = true, disable = { "ruby" } },
-		autotag = {
-			enable = true,
-		},
+		indent = { enable = true },
 	},
 	config = function(_, opts)
-		require("nvim-treesitter.install").prefer_git = true
 		require("nvim-treesitter.configs").setup(opts)
 	end,
 }

@@ -12,7 +12,7 @@ return {
 	--   end
 	--
 	"sainnhe/sonokai",
-	event = "VimEnter",
+	event = "VeryLazy",
 	config = function()
 		vim.cmd.colorscheme("sonokai")
 		vim.cmd.hi("Comment gui=none")

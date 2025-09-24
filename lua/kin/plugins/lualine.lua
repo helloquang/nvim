@@ -1,6 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile" },
+	-- event = "VeryLazy",
 	opts = function()
 		local theme = require("lualine.themes.sonokai")
 		local opts = {

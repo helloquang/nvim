@@ -1,7 +1,9 @@
 return {
 	{
 		"ibhagwan/fzf-lua",
-		event = "VeryLazy",
+		lazy = true,
+		-- event = { "BufReadPost", "BufNewFile" },
+		-- event = "VeryLazy",
 		opts = {
 			keymap = {
 				builtin = {
