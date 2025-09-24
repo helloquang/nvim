@@ -22,4 +22,17 @@ require("lazy").setup({
 		{ import = "kin.plugins" },
 		{ import = "kin.langs" },
 	},
+	performance = {
+		cache = { enabled = true },
+		rtp = {
+			disabled_plugins = {
+				"netrwPlugin",
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
 })
