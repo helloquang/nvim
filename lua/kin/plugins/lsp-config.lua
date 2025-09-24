@@ -1,5 +1,5 @@
 return {
-	"williamboman/mason-lspconfig.nvim",
+	"williamboman/mason.nvim",
 	dependencies = {
 		{ "williamboman/mason.nvim" },
 		{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
@@ -11,14 +11,10 @@ return {
 
 		require("mason").setup()
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					vim.lsp.config(server_name, server)
-					vim.lsp.enable(server_name)
-				end,
-			},
-		})
+
+		for server_name, server in pairs(servers) do
+			vim.lsp.config(server_name, server)
+			vim.lsp.enable(server_name)
+		end
 	end,
 }

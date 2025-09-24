@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"williamboman/mason.nvim",
 		opts = {
 			servers = {
 				lua_ls = {
