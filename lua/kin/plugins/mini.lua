@@ -2,6 +2,7 @@ return {
 	"echasnovski/mini.nvim",
 	event = { "BufReadPost" },
 	config = function()
+		require("mini.icons").setup()
 		-- Better Around/Inside textobjects
 		--
 		-- Examples:
