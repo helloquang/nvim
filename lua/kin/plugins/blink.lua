@@ -8,10 +8,20 @@ return {
 			"Kaiser-Yang/blink-cmp-dictionary",
 			"nvim-lua/plenary.nvim",
 		},
+		keys = {
+			{
+				"<C-d>",
+				function()
+					require("blink.cmp").show({ providers = { "dictionary" } })
+				end,
+				mode = "i",
+				desc = "Dictionary",
+			},
+		},
 		opts = {
 			snippets = { preset = "luasnip" },
 			sources = {
-				default = { "lsp", "path", "buffer", "snippets", "dictionary" },
+				default = { "lsp", "path", "buffer", "snippets" },
 				providers = {
 					dictionary = {
 						module = "blink-cmp-dictionary",
