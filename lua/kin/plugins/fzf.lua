@@ -2,12 +2,14 @@ return {
 	{
 		"ibhagwan/fzf-lua",
 		event = "VeryLazy",
-		-- opts = function()
-		-- 	local fzf = require("fzf-lua")
-		-- 	local config = fzf.config
-		-- 	config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
-		-- 	config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
-		-- end,
+		opts = {
+			keymap = {
+				builtin = {
+					["<c-d>"] = "preview-page-down",
+					["<c-u>"] = "preview-page-up",
+				},
+			},
+		},
 		keys = {
 			{
 				"<leader>ff",
