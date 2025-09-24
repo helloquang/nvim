@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		opts = {
 			servers = {
-				lua_ls = {
+				["lua-language-server"] = {
 					settings = {},
 				},
 				stylua = {

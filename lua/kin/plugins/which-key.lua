@@ -5,7 +5,4 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 300
 	end,
-	config = function() -- This is the function that runs, AFTER loading
-		require("which-key").setup()
-	end,
 }

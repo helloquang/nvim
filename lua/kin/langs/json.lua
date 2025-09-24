@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		opts = {
 			servers = {
-				jsonls = {
+				["json-lsp"] = {
 					settings = {
 						json = {
 							format = {

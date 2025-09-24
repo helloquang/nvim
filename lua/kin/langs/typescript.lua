@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		opts = {
 			servers = {
-				ts_ls = {
+				vtsls = {
 					settings = {},
 				},
 			},

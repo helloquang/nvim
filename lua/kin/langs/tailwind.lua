@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		opts = {
 			servers = {
-				tailwindcss = {
+				["tailwindcss-language-server"] = {
 					settings = {
 						tailwindCSS = {},
 					},

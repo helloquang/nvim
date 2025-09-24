@@ -3,12 +3,12 @@ return {
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		event = "VeryLazy",
-		opts = function()
-			local fzf = require("fzf-lua")
-			local config = fzf.config
-			config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
-			config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
-		end,
+		-- opts = function()
+		-- 	local fzf = require("fzf-lua")
+		-- 	local config = fzf.config
+		-- 	config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
+		-- 	config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
+		-- end,
 		keys = {
 			{
 				"<leader>ff",
@@ -94,16 +94,5 @@ return {
 				desc = "Goto declaration",
 			},
 		},
-		config = function(_, opts)
-			-- Quickfix
-
-			-- vim.keymap.set("n", "<leader>f", "<cmd>FzfLua files<cr>", { desc = "[F]iles" })
-			-- vim.keymap.set("n", "<leader>/", "<cmd>FzfLua live_grep<cr>", { desc = "[G]rep" })
-			-- vim.keymap.set("n", "<leader><space>", "<cmd>FzfLua resume<cr>", { desc = "[R]esume" })
-			-- vim.keymap.set("n", "<leader>r", "<cmd>FzfLua oldfiles cwd_only=true<cr>", { desc = "[R]ecent files" })
-			--
-			-- vim.keymap.set("n", "<leader>q", "<cmd>FzfLua quickfix<cr>", { desc = "[Q]ickfix list" })
-			-- vim.keymap.set("n", "<leader>l", "<cmd>FzfLua loclist<cr>", { desc = "[L]ocation list" })
-		end,
 	},
 }

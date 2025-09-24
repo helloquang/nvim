@@ -15,5 +15,6 @@ return {
 			vim.lsp.config(server_name, server)
 			vim.lsp.enable(server_name)
 		end
+		require("mason").setup()
 	end,
 }
