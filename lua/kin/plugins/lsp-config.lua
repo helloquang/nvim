@@ -1,16 +1,15 @@
 return {
 	"williamboman/mason.nvim",
-	dependencies = {
-		{ "williamboman/mason.nvim" },
-		{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
-	},
+	dependencies = {},
 	event = "VeryLazy",
 	config = function(_, opts)
 		local servers = opts.servers or {}
 		local ensure_installed = vim.tbl_keys(servers)
 
-		require("mason").setup()
-		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+		vim.api.nvim_create_user_command("MasonInstallAll", function()
+			local packages = table.concat(ensure_installed, " ")
+			vim.cmd("MasonInstall " .. packages)
+		end, {})
 
 		for server_name, server in pairs(servers) do
 			vim.lsp.config(server_name, server)

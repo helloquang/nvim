@@ -14,7 +14,7 @@ return { -- Highlight, edit, and navigate code
 			"vim",
 			"vimdoc",
 		},
-		auto_install = true,
+		auto_install = false,
 		highlight = {
 			enable = true,
 			additional_vim_regex_highlighting = { "ruby" },
