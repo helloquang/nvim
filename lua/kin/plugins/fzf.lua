@@ -42,12 +42,38 @@ return {
 				desc = "Live grep",
 			},
 			{
-				"<leader>fr",
+				"<leader>fds",
+				function()
+					require("fzf-lua").lsp_document_symbols()
+				end,
+				mode = { "n" },
+				desc = "Document symbols",
+			},
+			{
+				"gr",
 				function()
 					require("fzf-lua").lsp_references()
 				end,
 				mode = { "n" },
 				desc = "References",
+			},
+
+			{
+				"gi",
+				function()
+					require("fzf-lua").lsp_incoming_calls()
+				end,
+				mode = { "n" },
+				desc = "Incoming calls",
+			},
+
+			{
+				"go",
+				function()
+					require("fzf-lua").lsp_outgoing_calls()
+				end,
+				mode = { "n" },
+				desc = "Outgoing calls",
 			},
 			{
 				"gd",

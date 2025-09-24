@@ -19,7 +19,15 @@ return {
 					settings = {},
 				},
 
+				["twig-cs-fixer"] = {
+					settings = {},
+				},
+
 				["twiggy-language-server"] = {
+					settings = {},
+				},
+
+				["djlint"] = {
 					settings = {},
 				},
 			},
@@ -31,6 +39,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				php = { "php_cs_fixer" },
+				twig = { "twig-cs-fixer", "djlint" },
 			},
 		},
 	},
@@ -40,6 +49,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"php",
+				"twig",
 			},
 		},
 	},
