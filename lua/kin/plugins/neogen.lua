@@ -1,7 +1,7 @@
 return {
 	"danymat/neogen",
 	event = { "BufReadPost" },
-  opts = {},
+	opts = {},
 	keys = {
 		{
 			"<leader>gn",
