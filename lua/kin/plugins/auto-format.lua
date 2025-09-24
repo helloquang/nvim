@@ -13,15 +13,16 @@ return {
 	},
 	opts = {
 		notify_on_error = true,
-		format_on_save = function(bufnr)
-			local disable_filetypes = { c = true, cpp = true, php = true }
-			if disable_filetypes[vim.bo[bufnr].filetype] then
-				return
-			end
-			return {
-				timeout_ms = 3000,
-				lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-			}
-		end,
+		-- format_on_save = function(bufnr)
+		-- 	local disable_filetypes = { c = true, cpp = true, php = true }
+		-- 	if disable_filetypes[vim.bo[bufnr].filetype] then
+		-- 		return
+		-- 	end
+		-- 	return {
+		-- 		async = true,
+		-- 		timeout_ms = 3000,
+		-- 		lsp_fallback = false,
+		-- 	}
+		-- end,
 	},
 }
