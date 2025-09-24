@@ -2,9 +2,10 @@ return {
 	{
 
 		"echasnovski/mini.nvim",
-		lazy = true,
+		-- lazy = true,
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
+			require("mini.icons").setup()
 			require("mini.pairs").setup()
 			require("mini.comment").setup()
 			-- Better Around/Inside textobjects
