@@ -1,11 +1,10 @@
 return {
-	"neovim/nvim-lspconfig",
+	"williamboman/mason-lspconfig.nvim",
 	dependencies = {
 		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" },
 		{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
-		{ "saghen/blink.cmp" },
 	},
+	event = "VeryLazy",
 	config = function(_, opts)
 		local servers = opts.servers or {}
 		local ensure_installed = vim.tbl_keys(servers)
@@ -16,11 +15,10 @@ return {
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
-					server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
-					require("lspconfig")[server_name].setup(server)
+					vim.lsp.config(server_name, server)
+					vim.lsp.enable(server_name)
 				end,
 			},
 		})
-
 	end,
 }

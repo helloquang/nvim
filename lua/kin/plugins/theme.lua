@@ -12,6 +12,7 @@ return {
 	--   end
 	--
 	"sainnhe/sonokai",
+	event = "VimEnter",
 	init = function()
 		vim.cmd.colorscheme("sonokai")
 

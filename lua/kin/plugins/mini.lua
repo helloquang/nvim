@@ -1,5 +1,6 @@
 return {
 	"echasnovski/mini.nvim",
+	event = { "BufReadPost" },
 	config = function()
 		-- Better Around/Inside textobjects
 		--
