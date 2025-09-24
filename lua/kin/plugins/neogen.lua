@@ -1,6 +1,6 @@
 return {
 	"danymat/neogen",
-	event = { "BufReadPost" },
+  event = { "BufReadPost", "BufNewFile" },
 	opts = {},
 	keys = {
 		{

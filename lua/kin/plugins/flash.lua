@@ -1,6 +1,6 @@
 return {
 	"folke/flash.nvim",
-	event = { "BufReadPost" },
+	event = { "BufReadPost", "BufNewFile" },
 	---@type Flash.Config
   -- stylua: ignore
   opts = {},
