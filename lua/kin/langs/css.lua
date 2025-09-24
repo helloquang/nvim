@@ -2,7 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
-			servers = {
+			servers = { 
 				["css-lsp"] = {
 					settings = {},
 				},

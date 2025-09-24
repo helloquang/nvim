@@ -12,7 +12,11 @@ return {
 	--   end
 	--
 	"sainnhe/sonokai",
+	dependencies = {
+		"nvim-lualine/lualine.nvim",
+	},
 	event = "VimEnter",
+	opts = {},
 	init = function()
 		vim.cmd.colorscheme("sonokai")
 

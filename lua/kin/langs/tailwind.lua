@@ -5,7 +5,6 @@ return {
 			servers = {
 				["tailwindcss-language-server"] = {
 					settings = {
-						tailwindCSS = {},
 					},
 				},
 			},

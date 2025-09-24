@@ -2,6 +2,11 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			ensure_installed = {
+				"php-cs-fixer",
+				"twig-cs-fixer",
+				"djlint",
+			},
 			servers = {
 				intelephense = {
 					settings = {
@@ -15,19 +20,8 @@ return {
 						},
 					},
 				},
-				["php-cs-fixer"] = {
-					settings = {},
-				},
-
-				["twig-cs-fixer"] = {
-					settings = {},
-				},
 
 				["twiggy-language-server"] = {
-					settings = {},
-				},
-
-				["djlint"] = {
 					settings = {},
 				},
 			},

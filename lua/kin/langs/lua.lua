@@ -2,11 +2,11 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			ensure_installed = {
+				"stylua"	
+			},
 			servers = {
 				["lua-language-server"] = {
-					settings = {},
-				},
-				stylua = {
 					settings = {},
 				},
 			},
