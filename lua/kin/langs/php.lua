@@ -11,12 +11,6 @@ return {
 				intelephense = {
 					settings = {
 						intelephense = {
-							stubs = {
-								"wordpress",
-							},
-							files = {
-								maxSize = 5000000, -- Increase max file size if needed
-							},
 						},
 					},
 				},

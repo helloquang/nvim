@@ -1,0 +1,44 @@
+{
+  "psr-controller": {
+    "prefix": "psrcontroller",
+    "body": [
+      "<?php",
+      "",
+      "declare(strict_types=1);",
+      "",
+      "namespace ${1:Controller};",
+      "",
+      "use Psr\\Http\\Message\\ResponseInterface;",
+      "use Psr\\Http\\Message\\ServerRequestInterface;",
+      "use Psr\\Http\\Server\\RequestHandlerInterface;",
+      "",
+      "class $TM_FILENAME_BASE implements RequestHandlerInterface {",
+      "    public function __construct() {}",
+      "",
+      "    public function handle(ServerRequestInterface \\$request): ResponseInterface {",
+      "       $0",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Create PSR Controller"
+  },
+  "psr-factory": {
+	  "prefix": "psrfactory",
+	  "body": [
+		"<?php",
+		"",
+		"namespace ${1:Factory};",
+		"",
+		"use Psr\\Container\\ContainerInterface;",
+		"",
+		"class $TM_FILENAME_BASE {",
+		"	public function __invoke(ContainerInterface \\$container) {",
+		"       $0",
+		"	}",
+		"}",
+		""
+	  ],
+	  "description": "Create PSR Factory"
+	}
+}

@@ -46,6 +46,14 @@ return {
 				desc = "Live grep",
 			},
 			{
+				"<leader>fdd",
+				function()
+					require("fzf-lua").diagnostics_document()
+				end,
+				mode = { "n" },
+				desc = "Document diagnostics",
+			},
+			{
 				"<leader>fds",
 				function()
 					require("fzf-lua").lsp_document_symbols()
