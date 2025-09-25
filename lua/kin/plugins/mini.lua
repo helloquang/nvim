@@ -7,7 +7,6 @@ return {
 		config = function()
 			require("mini.icons").setup()
 			require("mini.pairs").setup()
-			require("mini.comment").setup()
 			-- Better Around/Inside textobjects
 			--
 			-- Examples:
@@ -21,13 +20,7 @@ return {
 			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup({
-				mappings = {
-					add = "gsa", -- Add surrounding in Normal and Visual modes
-					delete = "gsd", -- Delete surrounding
-					replace = "gsr", -- Replace surrounding
-				},
-			})
+			require("mini.surround").setup()
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
